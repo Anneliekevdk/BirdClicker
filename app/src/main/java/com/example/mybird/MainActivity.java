@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView tvPoints;
     private int points = 0;
-    private int birdsPerSecond = 100;
+    private int birdsPerSecond = 0; //dit is de seconde omhoog per ding zoals normalen cookie clicker
     private BirdCounter birdCounter = new BirdCounter();
     private Typeface ttf;
     private Random random;
@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints.setTypeface(ttf );
         ttf = Typeface.createFromAsset(getAssets(), "JandaManateeSolid.ttf");
 
+        TextView tvPoints = findViewById(R.id.tvPoints);
+        tvPoints.setTypeface(ttf);
+        tvPoints.setTextColor(Color.BLACK);
         random = new Random();
 
     }
@@ -74,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView.setTypeface(ttf);
         toast.setView(textView);
         CountDownTimer toastCoundtDown;
-        toastCoundtDown = new CountDownTimer(500, 1000) {
+        toastCoundtDown = new CountDownTimer(500, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
                 toast.show();
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void update (){
-        points += birdsPerSecond/100;
+        points += birdsPerSecond/10;
         tvPoints.setText(Integer.toString(points));
     }
     public class BirdCounter{
@@ -108,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     });
                 }
-            }, 1000, 10);
+            }, 100, 10);
         }
 
 
