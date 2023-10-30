@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="#FF9760"
     android:backgroundTint="#FF9760"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,20 +15,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layoutDirection="locale"
         android:paddingTop="20dp"
         android:text="0000"
         android:textSize="32sp" />
 
     <ImageView
-        android:id="@+id/imgBird"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|center_horizontal"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/okkie_bird_name"
-        android:onClick="onClick"
-        android:scaleType="centerInside"
-        android:src="@drawable/bird" />
+
+            android:id="@+id/imgBird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/okkie_bird_name"
+            android:onClick="onClick"
+            android:scaleType="centerInside"
+            android:src="@drawable/bird"
+/>
 
 </LinearLayout>

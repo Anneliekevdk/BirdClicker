@@ -3,7 +3,9 @@ package com.example.mybird;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -11,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int points = 0;
     private int birdsPerSecond = 100;
     private BirdCounter birdCounter = new BirdCounter();
+    private Typeface ttf;
+    private Random random;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         tvPoints = findViewById(R.id.tvPoints);
+        tvPoints.setTypeface(ttf );
+        ttf = Typeface.createFromAsset(getAssets(), "JandaManateeSolid.ttf");
+
+        random = new Random();
+
     }
 
     @Override 
@@ -51,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showToast(int stringID) {
-        Toast toast = new Toast(this);
-        toast.setGravity(Gravity.CENTER, 0 , 0);
+        final Toast toast = new Toast(this);
+        toast.setGravity(Gravity.CENTER|Gravity.LEFT, random.nextInt(600)+100, random.nextInt(600)-300);
         toast.setDuration(Toast.LENGTH_SHORT);
 
         TextView textView = new TextView(this);
@@ -60,9 +71,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textView.setTextSize(40f);
         textView.setTextColor(Color.BLACK);
-
+        textView.setTypeface(ttf);
         toast.setView(textView);
+        CountDownTimer toastCoundtDown;
+        toastCoundtDown = new CountDownTimer(500, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                toast.show();
+            }
+
+            @Override
+            public void onFinish() {
+                toast.cancel();
+            }
+        };
         toast.show();
+        toastCoundtDown.start();
     }
 
     private void update (){
