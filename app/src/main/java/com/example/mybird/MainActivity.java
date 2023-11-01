@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BirdCounter birdCounter = new BirdCounter();
     private Typeface ttf;
     private Random random;
+    private Switch shake;
 
     private ImageView imgBird;// heb ik gedaan
     @Override
@@ -41,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints = findViewById(R.id.tvPoints);
         tvPoints.setTypeface(ttf );
         ttf = Typeface.createFromAsset(getAssets(), "JandaManateeSolid.ttf");
+
+        shake = findViewById(R.id.shake);
+        shake.setTypeface(ttf);
 
         TextView tvPoints = findViewById(R.id.tvPoints);
         tvPoints.setTypeface(ttf);
