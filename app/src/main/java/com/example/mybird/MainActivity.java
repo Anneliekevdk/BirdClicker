@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -44,9 +47,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints.setTextColor(Color.BLACK);
         random = new Random();
 
-        imgBird = findViewById(R.id.imgBird);///----------------------------
+        imgBird = findViewById(R.id.imgBird);///---------------------------
+
+        // Stel de kleur van de statusbalk in op oranje
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor("#FF9760")); // Oranje kleur
+        }
 
     }
+
+
 
     @Override 
     public void onClick(View v){
@@ -67,29 +79,64 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints.setText(Integer.toString(points));
         showToast(R.string.clicked);
         //hier wil ik een if doen dat als de points 100 zijn dat die veranderd van image
+        imgBird = (ImageView) findViewById(R.id.imgBird);
+//            if (points > 10) {
+//                // Verander de afbeelding naar "bird1"
+//                imgBird.setImageResource(R.drawable.bird1);
+//            }
+//            if (points > 20) {
+//                imgBird.setImageResource(R.drawable.bird2);
+//            }else if (points > 30){
+//                imgBird.setImageResource(R.drawable.bird3);
+//            }else if (points > 40) {
+//                imgBird.setImageResource(R.drawable.bird4);
+//            }else if (points > 50) {
+//                imgBird.setImageResource(R.drawable.bird5);
+//            }else if (points > 60) {
+//                imgBird.setImageResource(R.drawable.bird6);
+//            }else if (points > 70) {
+//                imgBird.setImageResource(R.drawable.bird7);
+//            }else if (points > 80) {
+//                imgBird.setImageResource(R.drawable.bird8);
+//            }else if (points > 90) {
+//                imgBird.setImageResource(R.drawable.bird9);
+//            }else if (points > 100) {
+//                imgBird.setImageResource(R.drawable.bird10);
+//            }
 
-
-            if (points > 10) {
-                // Verander de afbeelding naar "bird0"
-                imgBird.setImageResource(R.drawable.bird1);
-            }else if (points > 20) {
-                imgBird.setImageResource(R.drawable.bird2);
-            }else if (points > 30){
-                imgBird.setImageResource(R.drawable.bird3);
-            }else if (points > 40) {
-                imgBird.setImageResource(R.drawable.bird4);
-            }else if (points > 50) {
-                imgBird.setImageResource(R.drawable.bird5);
-            }else if (points > 60) {
-                imgBird.setImageResource(R.drawable.bird6);
-            }else if (points > 70) {
-                imgBird.setImageResource(R.drawable.bird7);
-            }else if (points > 80) {
-                imgBird.setImageResource(R.drawable.bird8);
-            }else if (points > 90) {
-                imgBird.setImageResource(R.drawable.bird9);
-            }else if (points > 100) {
-                imgBird.setImageResource(R.drawable.bird10);
+            switch (points){ //als de punten ...
+                case 100: //10 is switch naar die image
+                    imgBird.setImageResource(R.drawable.bird1);
+                    break;
+                case 200:
+                    imgBird.setImageResource(R.drawable.bird2);
+                    break;
+                case 300:
+                    imgBird.setImageResource(R.drawable.bird3);
+                    break;
+                case 400:
+                    imgBird.setImageResource(R.drawable.bird4);
+                    break;
+                case 500:
+                    imgBird.setImageResource(R.drawable.bird5);
+                    break;
+                case 600:
+                    imgBird.setImageResource(R.drawable.bird6);
+                    break;
+                case 700:
+                    imgBird.setImageResource(R.drawable.bird7);
+                    break;
+                case 800:
+                    imgBird.setImageResource(R.drawable.bird8);
+                    break;
+                case 900:
+                    imgBird.setImageResource(R.drawable.bird9);
+                    break;
+                case 1000:
+                    imgBird.setImageResource(R.drawable.bird10);
+                    break;
+                default:
+//                    imgBird.setImageResource(R.drawable.bird0); geen defalt anders reset die hem na 10 dus bij 10 goeie img dan bij 11 niet meer  (zelfde met andere getallen)
             }
 
     }

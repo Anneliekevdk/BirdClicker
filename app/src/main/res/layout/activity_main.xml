@@ -21,16 +21,15 @@
         android:textSize="48sp" />
 
     <ImageView
-
-            android:id="@+id/imgBird"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/okkie_bird_name"
-            android:onClick="onClick"
-            android:scaleType="centerInside"
-            android:src="@drawable/bird"
-/>
+        android:id="@+id/imgBird"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/okkie_bird_name"
+        android:onClick="onClick"
+        android:scaleType="centerInside"
+        android:src="@drawable/bird0"
+    />
 
 </LinearLayout>
