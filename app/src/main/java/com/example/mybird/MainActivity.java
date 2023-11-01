@@ -17,6 +17,9 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
+import android.widget.ImageView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tvPoints;
@@ -26,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Typeface ttf;
     private Random random;
 
-
+    private ImageView imgBird;// heb ik gedaan
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints.setTypeface(ttf);
         tvPoints.setTextColor(Color.BLACK);
         random = new Random();
+
+        imgBird = findViewById(R.id.imgBird);///----------------------------
 
     }
 
@@ -61,6 +66,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         points++;
         tvPoints.setText(Integer.toString(points));
         showToast(R.string.clicked);
+        //hier wil ik een if doen dat als de points 100 zijn dat die veranderd van image
+
+
+            if (points > 10) {
+                // Verander de afbeelding naar "bird0"
+                imgBird.setImageResource(R.drawable.bird1);
+            }else if (points > 20) {
+                imgBird.setImageResource(R.drawable.bird2);
+            }else if (points > 30){
+                imgBird.setImageResource(R.drawable.bird3);
+            }else if (points > 40) {
+                imgBird.setImageResource(R.drawable.bird4);
+            }else if (points > 50) {
+                imgBird.setImageResource(R.drawable.bird5);
+            }else if (points > 60) {
+                imgBird.setImageResource(R.drawable.bird6);
+            }else if (points > 70) {
+                imgBird.setImageResource(R.drawable.bird7);
+            }else if (points > 80) {
+                imgBird.setImageResource(R.drawable.bird8);
+            }else if (points > 90) {
+                imgBird.setImageResource(R.drawable.bird9);
+            }else if (points > 100) {
+                imgBird.setImageResource(R.drawable.bird10);
+            }
 
     }
 
@@ -113,7 +143,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }, 100, 10);
         }
-
-
     }
 }
