@@ -2,7 +2,7 @@ package com.example.mybird;
 
 import android.view.animation.Animation;
 
-public class SimpleAnimationListerner implements Animation.AnimationListener{
+public class SimpleAnimationListener implements Animation.AnimationListener{
     @Override
     public void onAnimationStart(Animation animation) {
 

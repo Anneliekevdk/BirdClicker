@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView tvPoints;
     private int points = 0;
-    private int birdsPerSecond = 0; //dit is de seconde omhoog per ding zoals normalen cookie clicker
-    private BirdCounter birdCounter = new BirdCounter();
     private Typeface ttf;
     private Random random;
     private Switch shake;
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints.setTextColor(Color.BLACK);
         random = new Random();
 
-        imgBird = findViewById(R.id.imgBird);///---------------------------
+        imgBird = findViewById(R.id.imgBird);
 
         // Stel de kleur van de statusbalk in op oranje
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -65,11 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    @Override 
+    @Override
     public void onClick(View v){
         if(v.getId() == R.id.imgBird){
             Animation a = AnimationUtils.loadAnimation(this, R.anim.bird_animation);
-            a.setAnimationListener(new SimpleAnimationListerner(){
+            a.setAnimationListener(new SimpleAnimationListener(){
                 @Override
                 public void onAnimationEnd(Animation animation){
                     birdClick();
@@ -85,64 +83,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         showToast(R.string.clicked);
         //hier wil ik een if doen dat als de points 100 zijn dat die veranderd van image
         imgBird = (ImageView) findViewById(R.id.imgBird);
-//            if (points > 10) {
-//                // Verander de afbeelding naar "bird1"
-//                imgBird.setImageResource(R.drawable.bird1);
-//            }
-//            if (points > 20) {
-//                imgBird.setImageResource(R.drawable.bird2);
-//            }else if (points > 30){
-//                imgBird.setImageResource(R.drawable.bird3);
-//            }else if (points > 40) {
-//                imgBird.setImageResource(R.drawable.bird4);
-//            }else if (points > 50) {
-//                imgBird.setImageResource(R.drawable.bird5);
-//            }else if (points > 60) {
-//                imgBird.setImageResource(R.drawable.bird6);
-//            }else if (points > 70) {
-//                imgBird.setImageResource(R.drawable.bird7);
-//            }else if (points > 80) {
-//                imgBird.setImageResource(R.drawable.bird8);
-//            }else if (points > 90) {
-//                imgBird.setImageResource(R.drawable.bird9);
-//            }else if (points > 100) {
-//                imgBird.setImageResource(R.drawable.bird10);
-//            }
 
-            switch (points){ //als de punten ...
-                case 100: //10 is switch naar die image
-                    imgBird.setImageResource(R.drawable.bird1);
-                    break;
-                case 200:
-                    imgBird.setImageResource(R.drawable.bird2);
-                    break;
-                case 300:
-                    imgBird.setImageResource(R.drawable.bird3);
-                    break;
-                case 400:
-                    imgBird.setImageResource(R.drawable.bird4);
-                    break;
-                case 500:
-                    imgBird.setImageResource(R.drawable.bird5);
-                    break;
-                case 600:
-                    imgBird.setImageResource(R.drawable.bird6);
-                    break;
-                case 700:
-                    imgBird.setImageResource(R.drawable.bird7);
-                    break;
-                case 800:
-                    imgBird.setImageResource(R.drawable.bird8);
-                    break;
-                case 900:
-                    imgBird.setImageResource(R.drawable.bird9);
-                    break;
-                case 1000:
-                    imgBird.setImageResource(R.drawable.bird10);
-                    break;
-                default:
+        switch (points){ //als de punten ...
+            case 100: //10 is switch naar die image
+                imgBird.setImageResource(R.drawable.bird1);
+                break;
+            case 200:
+                imgBird.setImageResource(R.drawable.bird2);
+                break;
+            case 300:
+                imgBird.setImageResource(R.drawable.bird3);
+                break;
+            case 400:
+                imgBird.setImageResource(R.drawable.bird4);
+                break;
+            case 500:
+                imgBird.setImageResource(R.drawable.bird5);
+                break;
+            case 600:
+                imgBird.setImageResource(R.drawable.bird6);
+                break;
+            case 700:
+                imgBird.setImageResource(R.drawable.bird7);
+                break;
+            case 800:
+                imgBird.setImageResource(R.drawable.bird8);
+                break;
+            case 900:
+                imgBird.setImageResource(R.drawable.bird9);
+                break;
+            case 1000:
+                imgBird.setImageResource(R.drawable.bird10);
+                break;
+            default:
 //                    imgBird.setImageResource(R.drawable.bird0); geen defalt anders reset die hem na 10 dus bij 10 goeie img dan bij 11 niet meer  (zelfde met andere getallen)
-            }
+        }
 
     }
 
@@ -172,28 +147,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
         toast.show();
         toastCoundtDown.start();
-    }
-
-    private void update (){
-        points += birdsPerSecond/10;
-        tvPoints.setText(Integer.toString(points));
-    }
-    public class BirdCounter{
-        private Timer timer;
-
-        public BirdCounter(){
-            timer = new Timer();
-            timer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            update();
-                        }
-                    });
-                }
-            }, 100, 10);
-        }
     }
 }
