@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF9760"
     android:backgroundTint="#FF9760"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
     <Switch
         android:id="@+id/trilling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:paddingBottom="0sp"
@@ -28,7 +27,8 @@
         android:id="@+id/shakeSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/trilling"
         android:layout_marginStart="16dp"
         android:paddingBottom="50sp"
         android:text="Shake"
@@ -41,10 +41,9 @@
         android:id="@+id/tvPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="50sp"
-        android:gravity="center"
-        android:paddingTop="20dp"
+        android:paddingTop="175dp"
         android:text="0"
         android:textSize="48sp" />
 
@@ -52,7 +51,8 @@
         android:id="@+id/imgBird"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|center_horizontal"
+        android:layout_below="@+id/shakeSwitch"
+        android:layout_marginTop="142dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/okkie_bird_name"
         android:gravity="center"
@@ -60,4 +60,14 @@
         android:scaleType="centerInside"
         android:src="@drawable/bird0" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/questionmark"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/question" />
+
+</RelativeLayout>
