@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -18,8 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 import android.widget.ImageView;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int points = 0;
     private Typeface ttf;
     private Random random;
-    private Switch shake;
+    private Switch trilling;
 
     private ImageView imgBird;// heb ik gedaan
     @Override
@@ -42,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints.setTypeface(ttf );
         ttf = Typeface.createFromAsset(getAssets(), "JandaManateeSolid.ttf");
 
-        shake = findViewById(R.id.shake);
-        shake.setTypeface(ttf);
+        trilling = findViewById(R.id.trilling);
+        trilling.setTypeface(ttf);
 
         TextView tvPoints = findViewById(R.id.tvPoints);
         tvPoints.setTypeface(ttf);
@@ -60,9 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
-
-
     @Override
     public void onClick(View v){
         if(v.getId() == R.id.imgBird){
@@ -79,11 +75,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void birdClick() {
         points++;
+
+        addTrilling();
+
         tvPoints.setText(Integer.toString(points));
         showToast(R.string.clicked);
-        //hier wil ik een if doen dat als de points 100 zijn dat die veranderd van image
         imgBird = (ImageView) findViewById(R.id.imgBird);
-
         switch (points){ //als de punten ...
             case 100: //10 is switch naar die image
                 imgBird.setImageResource(R.drawable.bird1);
@@ -119,6 +116,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                    imgBird.setImageResource(R.drawable.bird0); geen defalt anders reset die hem na 10 dus bij 10 goeie img dan bij 11 niet meer  (zelfde met andere getallen)
         }
 
+    }
+
+    private void addTrilling() {
+        //if the trilling switch is on the phone needs to fibrate by every point ++
+        if (trilling.isChecked()) { // Check if the trilling switch is on
+            Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+            if (vibrator != null) {
+                // Vibrate for 100 milliseconds when points increase
+                vibrator.vibrate(100);
+            }
+        }
     }
 
     private void showToast(int stringID) {
