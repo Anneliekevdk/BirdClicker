@@ -2,6 +2,7 @@ package com.example.mybird;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Switch trilling;
     private Switch shakeing;
     private ImageView imgBird;// heb ik gedaan
+    private ImageView questionmark;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         trilling = findViewById(R.id.trilling);
         trilling.setTypeface(ttf);
+
+        questionmark = findViewById(R.id.questionmark);
+        questionmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Pop.class));
+            }
+        });
 
         shakeing = findViewById(R.id.shakeSwitch);
         shakeing.setTypeface(ttf);
