@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Typeface ttf;
     private Random random;
     private Switch trilling;
-
+    private Switch shakeing;
     private ImageView imgBird;// heb ik gedaan
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         trilling = findViewById(R.id.trilling);
         trilling.setTypeface(ttf);
+
+        shakeing = findViewById(R.id.shakeSwitch);
+        shakeing.setTypeface(ttf);
 
         TextView tvPoints = findViewById(R.id.tvPoints);
         tvPoints.setTypeface(ttf);
@@ -57,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.parseColor("#FF9760")); // Oranje kleur
         }
-
     }
     @Override
     public void onClick(View v){
@@ -75,47 +77,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void birdClick() {
         points++;
-
         addTrilling();
-
         tvPoints.setText(Integer.toString(points));
         showToast(R.string.clicked);
         imgBird = (ImageView) findViewById(R.id.imgBird);
         switch (points){ //als de punten ...
-            case 100: //10 is switch naar die image
+            case 10: //10 is switch naar die image
                 imgBird.setImageResource(R.drawable.bird1);
                 break;
-            case 200:
+            case 20:
                 imgBird.setImageResource(R.drawable.bird2);
                 break;
-            case 300:
+            case 30:
                 imgBird.setImageResource(R.drawable.bird3);
                 break;
-            case 400:
+            case 40:
                 imgBird.setImageResource(R.drawable.bird4);
                 break;
-            case 500:
+            case 50:
                 imgBird.setImageResource(R.drawable.bird5);
                 break;
-            case 600:
+            case 60:
                 imgBird.setImageResource(R.drawable.bird6);
                 break;
-            case 700:
+            case 70:
                 imgBird.setImageResource(R.drawable.bird7);
                 break;
-            case 800:
+            case 80:
                 imgBird.setImageResource(R.drawable.bird8);
                 break;
-            case 900:
+            case 90:
                 imgBird.setImageResource(R.drawable.bird9);
                 break;
-            case 1000:
+            case 100:
                 imgBird.setImageResource(R.drawable.bird10);
                 break;
             default:
 //                    imgBird.setImageResource(R.drawable.bird0); geen defalt anders reset die hem na 10 dus bij 10 goeie img dan bij 11 niet meer  (zelfde met andere getallen)
         }
-
     }
 
     private void addTrilling() {
@@ -133,10 +132,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final Toast toast = new Toast(this);
         toast.setGravity(Gravity.CENTER|Gravity.LEFT, random.nextInt(600)+100, random.nextInt(600)-300);
         toast.setDuration(Toast.LENGTH_SHORT);
-
         TextView textView = new TextView(this);
         textView.setText(stringID);
-
         textView.setTextSize(40f);
         textView.setTextColor(Color.BLACK);
         textView.setTypeface(ttf);

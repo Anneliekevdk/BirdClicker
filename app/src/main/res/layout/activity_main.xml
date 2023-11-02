@@ -17,8 +17,21 @@
         android:layout_gravity="start"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:paddingBottom="50sp"
+        android:paddingBottom="0sp"
         android:text="Trilling"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:thumbTint="@drawable/thump"
+        android:trackTint="@drawable/track" />
+
+    <Switch
+        android:id="@+id/shakeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="50sp"
+        android:text="Shake"
         android:textColor="#000000"
         android:textSize="34sp"
         android:thumbTint="@drawable/thump"
