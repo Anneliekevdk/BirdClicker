@@ -2,7 +2,9 @@ package com.example.mybird;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -82,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.parseColor("#FF9760")); // Orange color
         }
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override
@@ -140,6 +144,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent event) { //wordt uitgevoed altijd als die wat detecteerd
+        if (shakeing.isChecked()){
+            if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+                float x = event.values[0];
+                float y = event.values[1];
+                float z = event.values[2];
+                double acceleration = Math.sqrt(x * x + y * y + z * z);
+
+                if (canShake && acceleration > 60) {
+//                    points++;
+                    birdClick();
+//                canShake = false; dan kan die maar 1 keer
+                }
+            }
+        }
+    }
     private void addTrilling() {
         if (trilling.isChecked()) {
             Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
@@ -175,24 +196,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toastCountDown.start();
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent event) { //wordt uitgevoed altijd als die wat detecteerd
-        if (shakeing.isChecked()){
-            if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-                float x = event.values[0];
-                float y = event.values[1];
-                float z = event.values[2];
-                double acceleration = Math.sqrt(x * x + y * y + z * z);
-
-                if (canShake && acceleration > 60) {
-//                    points++;
-                    birdClick();
-//                canShake = false; dan kan die maar 1 keer
-                }
-            }
-        }
-
-    }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
