@@ -109,35 +109,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         showToast(R.string.clicked);
         imgBird = findViewById(R.id.imgBird);
         switch (points) {
-            case 10:
+            case 100:
                 imgBird.setImageResource(R.drawable.bird1);
                 break;
-            case 20:
-                imgBird.setImageResource(R.drawable.bird2);
-                break;
-            case 30:
+            case 200:
                 imgBird.setImageResource(R.drawable.bird3);
                 break;
-            case 40:
+            case 300:
                 imgBird.setImageResource(R.drawable.bird4);
                 break;
-            case 50:
+            case 400:
                 imgBird.setImageResource(R.drawable.bird5);
                 break;
-            case 60:
+            case 500:
                 imgBird.setImageResource(R.drawable.bird6);
                 break;
-            case 70:
+            case 600:
                 imgBird.setImageResource(R.drawable.bird7);
                 break;
-            case 80:
+            case 700:
                 imgBird.setImageResource(R.drawable.bird8);
                 break;
-            case 90:
+            case 800:
                 imgBird.setImageResource(R.drawable.bird9);
                 break;
-            case 100:
+            case 900:
                 imgBird.setImageResource(R.drawable.bird10);
+                break;
+            case 1000:
+                imgBird.setImageResource(R.drawable.bloemokkie);
+                break;
+            case 1100:
+                imgBird.setImageResource(R.drawable.buisnessokkie);
+                break;
+            case 1200:
+                imgBird.setImageResource(R.drawable.hippy);
+                break;
+            case 1300:
+                imgBird.setImageResource(R.drawable.cowboyokkie);
+                break;
+            case 1400:
+                imgBird.setImageResource(R.drawable.kerstokkie);
+                break;
+            case 1500:
+                imgBird.setImageResource(R.drawable.sinterklaasokkie);
+                break;
+            case 2000:
+                imgBird.setImageResource(R.drawable.pietokkie);
                 break;
             default:
                 break;
@@ -153,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 float z = event.values[2];
                 double acceleration = Math.sqrt(x * x + y * y + z * z);
 
-                if (canShake && acceleration > 60) {
+                if (canShake && acceleration > 50) {
 //                    points++;
                     birdClick();
 //                canShake = false; dan kan die maar 1 keer
