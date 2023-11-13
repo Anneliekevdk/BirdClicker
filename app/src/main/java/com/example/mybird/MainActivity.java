@@ -143,12 +143,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imgBird.setImageResource(R.drawable.okkiepiettwee);
                 break;
             case 1200:
-                imgBird.setImageResource(R.drawable.bird6);
+                imgBird.setImageResource(R.drawable.summerokkie);
                 break;
             case 1300:
-                imgBird.setImageResource(R.drawable.bird7);
+                imgBird.setImageResource(R.drawable.bird6);
                 break;
             case 1400:
+                imgBird.setImageResource(R.drawable.bird7);
+                break;
+            case 1500:
                 imgBird.setImageResource(R.drawable.bird8);
                 break;
             case 1600:
