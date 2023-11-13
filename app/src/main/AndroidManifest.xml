@@ -26,6 +26,10 @@
         <activity android:name=".Pop"
             android:theme="@style/AppTheme.CustomTheme"
         ></activity>
+
+        <activity android:name=".OkkieDex"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
     </application>
 
 </manifest>

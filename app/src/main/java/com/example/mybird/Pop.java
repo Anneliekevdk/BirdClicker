@@ -1,12 +1,20 @@
 package com.example.mybird;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
 
 public class Pop extends Activity {
+
+    private Typeface ttf;
+    private TextView start;
+    private TextView mid;
+    private TextView end;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -28,5 +36,17 @@ public class Pop extends Activity {
                 finish(); // Close the activity when the ImageView is clicked
             }
         });
+
+
+        ttf = Typeface.createFromAsset(getAssets(), "JandaManateeSolid.ttf");
+
+        start = findViewById(R.id.startPart);
+        start.setTypeface(ttf);
+
+        mid = findViewById(R.id.midPart);
+        mid.setTypeface(ttf);
+
+        end = findViewById(R.id.lastPart);
+        end.setTypeface(ttf);
     }
 }

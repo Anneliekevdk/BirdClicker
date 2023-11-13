@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Switch shakeing;
     private ImageView imgBird;
     private ImageView questionmark;
+    private ImageView okkiedex;
     private SensorManager sensorManager;
     private boolean canShake = true;
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trilling = findViewById(R.id.trilling);
         trilling.setTypeface(ttf);
 
+        okkiedex = findViewById(R.id.okkiedexquestionmark);
         questionmark = findViewById(R.id.questionmark);
         questionmark.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +64,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, Pop.class));
             }
         });
+
+        okkiedex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, OkkieDex.class));
+            }
+        });
+
+
+
+
 
         shakeing = findViewById(R.id.shakeSwitch);
         shakeing.setTypeface(ttf);
@@ -100,6 +114,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             });
             v.startAnimation(a);
         }
+
+//        if(v.getId() ==R.id.questionmark){
+//            questionmark.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, OkkieDex.class));
+//            }
+//        });
+//        }else if(v.getId() ==R.id.okkiedexquestionmark){
+//            questionmark.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    startActivity(new Intent(MainActivity.this, OkkieDex.class));
+//                    Log.d("hmmmm", "onClick: okkiedex ");
+//                }
+//            });
+//        }
     }
 
     private void birdClick() {
