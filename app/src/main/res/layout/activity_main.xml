@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9760"
-    android:backgroundTint="#FF9760"
+    android:background="#FCB48D"
+    android:backgroundTint="#FCB48D"
     tools:context=".MainActivity">
 
     <Switch

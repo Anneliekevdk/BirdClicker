@@ -10,8 +10,8 @@ android {
         applicationId = "com.example.mybird"
         minSdk = 24
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 1 //deze moet je updaten voor je hem kan uploaden in playstore
+        versionName = "1.0" //deze moet je updaten voor je hem kan uploaden in playstore
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

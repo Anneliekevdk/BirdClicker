@@ -122,41 +122,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imgBird.setImageResource(R.drawable.bird5);
                 break;
             case 500:
-                imgBird.setImageResource(R.drawable.bird6);
-                break;
-            case 600:
-                imgBird.setImageResource(R.drawable.bird7);
-                break;
-            case 700:
-                imgBird.setImageResource(R.drawable.bird8);
-                break;
-            case 800:
-                imgBird.setImageResource(R.drawable.bird9);
-                break;
-            case 900:
-                imgBird.setImageResource(R.drawable.bird10);
-                break;
-            case 1000:
                 imgBird.setImageResource(R.drawable.bloemokkie);
                 break;
-            case 1100:
+            case 600:
                 imgBird.setImageResource(R.drawable.buisnessokkie);
                 break;
-            case 1200:
+            case 700:
                 imgBird.setImageResource(R.drawable.hippy);
                 break;
-            case 1300:
+            case 800:
                 imgBird.setImageResource(R.drawable.cowboyokkie);
                 break;
-            case 1400:
+            case 900:
                 imgBird.setImageResource(R.drawable.kerstokkie);
                 break;
-            case 1500:
+            case 1000:
                 imgBird.setImageResource(R.drawable.sinterklaasokkie);
                 break;
-            case 2000:
-                imgBird.setImageResource(R.drawable.pietokkie);
+            case 1100:
+                imgBird.setImageResource(R.drawable.okkiepiettwee);
                 break;
+            case 1200:
+                imgBird.setImageResource(R.drawable.bird6);
+                break;
+            case 1300:
+                imgBird.setImageResource(R.drawable.bird7);
+                break;
+            case 1400:
+                imgBird.setImageResource(R.drawable.bird8);
+                break;
+            case 1600:
+                imgBird.setImageResource(R.drawable.bird9);
+                break;
+            case 2000:
+                imgBird.setImageResource(R.drawable.bird10);
+
             default:
                 break;
         }
