@@ -1,68 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF">
+    android:background="#FCB48D"
+    android:backgroundTint="#FCB48D">
 
     <ImageView
-        android:id="@+id/xross"
+        android:id="@+id/okkieXross"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:onClick="onClick"
-        android:src="@drawable/xross" />
-
-
-    <TextView
-        android:id="@+id/startPart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="16dp"
-        android:text="De magie van de Okkie Clicker!"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
+        android:src="@drawable/xross2" />
 
     <TextView
-        android:id="@+id/midPart"
+        android:id="@+id/okkiedexText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/startPart"
-        android:layout_marginStart="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Stap binnen in de betoverende wereld van Okkie de vogel, waar het plezier begint zodra je begint te klikken. Verzamel kostbare punten en ontgrendel een hele reeks schattige Okkie-vogelvormen. Of je nu in de wachtkamer van de tandarts zit, onderweg in de trein bent of gewoon een momentje voor jezelf zoekt, Okkie Clicker is jouw ideale metgezel. "
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        android:textSize="16sp"
+        android:text="Okkie dex"
         android:textColor="#404040"
-        android:textStyle="bold" />
+        android:textSize="34sp" />
 
     <TextView
-        android:id="@+id/lastPart"
+        android:id="@+id/vooralleOkkies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/midPart"
-        android:layout_marginStart="16dp"
+        android:layout_below="@id/okkiedexText"
+        android:layout_centerHorizontal="true"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Het beste gedeelte? Als je de app per ongeluk sluit, wacht er een spannende kans op een: een nieuw begin! Dus blijf klikken en geniet van eindeloos vermaak met Okkie de vogel."
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        android:textSize="16sp"
+        android:text="Voor al jou Okkies"
         android:textColor="#404040"
-        android:textStyle="bold" />
+        android:textSize="12sp" />
 
 
 </RelativeLayout>
