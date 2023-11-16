@@ -31,7 +31,7 @@ public class Pop extends Activity {
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
 
-        getWindow().setLayout((int)(width*.95), (int)(height*.95));
+        getWindow().setLayout((int)(width*.95), (int)(height*1.0));
 
         ImageView xrossImageView = findViewById(R.id.xross);
         xrossImageView.setOnClickListener(new View.OnClickListener() {

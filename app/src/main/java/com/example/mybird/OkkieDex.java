@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,11 +14,18 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class OkkieDex extends Activity {
 
     private Typeface ttf;
     private TextView okkiedexText;
     private TextView vooralleOkkies;
+
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -44,5 +52,16 @@ public class OkkieDex extends Activity {
 
         vooralleOkkies = findViewById(R.id.vooralleOkkies);
         vooralleOkkies.setTypeface(ttf);
+
+
+        recyclerView = findViewById(R.id.okkiesRecyclerView);
+        add_button = findViewById(R.id.floatingActionButton);
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //update shit
+                Log.d("test", "test");
+            }
+        });
     }
 }
