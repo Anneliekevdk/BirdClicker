@@ -54,14 +54,17 @@ public class OkkieDex extends Activity {
         vooralleOkkies.setTypeface(ttf);
 
 
-        recyclerView = findViewById(R.id.okkiesRecyclerView);
-        add_button = findViewById(R.id.floatingActionButton);
-        add_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //update shit
-                Log.d("test", "test");
-            }
-        });
+//        recyclerView = findViewById(R.id.okkiesRecyclerView);
+//        add_button = findViewById(R.id.floatingActionButton);
+//        add_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //update shit
+//
+//                Log.d("test", "test");
+//                MyDatabaseHelper myDB = new MyDatabaseHelper(OkkieDex.this);
+//                myDB.addBird()
+//            }
+//        });
     }
 }

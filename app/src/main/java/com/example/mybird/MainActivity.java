@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView okkiedex;
     private SensorManager sensorManager;
     private boolean canShake = true;
+    private MyDatabaseHelper myDB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         okkiedex = findViewById(R.id.okkiedexquestionmark);
         questionmark = findViewById(R.id.questionmark);
+        myDB = new MyDatabaseHelper(MainActivity.this);
         questionmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,15 +68,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+
+
+        int numberInOkkiedex = myDB.getAllBirdTitles().size();
+        if (numberInOkkiedex > 2){
+            points = 10;
+            //birdClick();
+        }
         okkiedex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, OkkieDex.class));
             }
         });
-
-
-
 
 
         shakeing = findViewById(R.id.shakeSwitch);
@@ -139,21 +146,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPoints.setText(Integer.toString(points));
         showToast(R.string.clicked);
         imgBird = findViewById(R.id.imgBird);
+
+        String imageOfTheOkkie;
+        String titleOfTheOkkieImage;
         switch (points) {
-            case 100:
+            case 2:
                 imgBird.setImageResource(R.drawable.bird1);
+                titleOfTheOkkieImage = "" + R.drawable.bird1;
+                imageOfTheOkkie = "bird1";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
+                Log.d("dbtestofz", "lijst:" + myDB.getAllBirdTitles());
                 break;
-            case 200:
+            case 4:
                 imgBird.setImageResource(R.drawable.bird3);
+                titleOfTheOkkieImage = "" + R.drawable.bird3;
+                imageOfTheOkkie = "bird3";
+                Log.d("dbtestofz", "lijst:" + myDB.getAllBirdTitles());
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
-            case 300:
+            case 6:
                 imgBird.setImageResource(R.drawable.bird4);
+                titleOfTheOkkieImage = "" + R.drawable.bird4;
+                imageOfTheOkkie = "bird4";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
-            case 400:
+            case 15:
                 imgBird.setImageResource(R.drawable.bird5);
+                titleOfTheOkkieImage = "" + R.drawable.bird5;
+                imageOfTheOkkie = "bird5";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
-            case 500:
+            case 20:
                 imgBird.setImageResource(R.drawable.bloemokkie);
+                titleOfTheOkkieImage = "" + R.drawable.bloemokkie;
+                imageOfTheOkkie = "bloemokkie";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 600:
                 imgBird.setImageResource(R.drawable.buisnessokkie);
@@ -196,6 +223,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    public void addToMyDB(String okkieImageTitle, String okkieImage){
+        Log.d("test", "test ADDTOMYDB!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        MyDatabaseHelper myDB = new MyDatabaseHelper(MainActivity.this);
+
+        myDB.addBird(okkieImageTitle.trim(), okkieImage.trim());
+        Log.d("tagg", myDB.getAllBirdTitles().toString());
+    }
     @Override
     public void onSensorChanged(SensorEvent event) { //wordt uitgevoed altijd als die wat detecteerd
         if (shakeing.isChecked()){
