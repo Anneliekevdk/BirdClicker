@@ -68,11 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-//        int numberInOkkiedex = myDB.getAllBirdTitles().size();
-//        if (numberInOkkiedex > 2){
-//            points = 10;
-//            //birdClick();
-//        }
+
         okkiedex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,13 +129,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 titleOfTheOkkieImage = "" + R.drawable.bird1;
                 imageOfTheOkkie = "bird1";
                 addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
-                Log.d("dbtestofz", "lijst:" + myDB.getAllBirdTitles());
                 break;
             case 4:
                 imgBird.setImageResource(R.drawable.bird3);
                 titleOfTheOkkieImage = "" + R.drawable.bird3;
                 imageOfTheOkkie = "bird3";
-                Log.d("dbtestofz", "lijst:" + myDB.getAllBirdTitles());
                 addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 6:
@@ -239,7 +233,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void addToMyDB(String okkieImageTitle, String okkieImage){
         Log.d("test", "test ADDTOMYDB!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         MyDatabaseHelper myDB = new MyDatabaseHelper(MainActivity.this);
-
         myDB.addBird(okkieImageTitle.trim(), okkieImage.trim());
         Log.d("tagg", myDB.getAllBirdTitles().toString());
     }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:orientation="horizontal"
+    android:background="#FCB48D">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_columnWeight="1"
+        android:padding="12dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/questionmark" />
+
+        <TextView
+            android:id="@+id/bird_id_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:paddingBottom="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Repeat the above CardView and ImageView blocks for additional rows and ImageViews -->
+
+</GridLayout>

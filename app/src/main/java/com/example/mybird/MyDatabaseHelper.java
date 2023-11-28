@@ -20,16 +20,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String TABLE_NAME = "birds";
-    private static final String COLUM_ID = "_id";
-    private static final String COLUM_TITLE = "bird_img_title";
-    private static final String COLUM_IMAGE = "img";
+    private static final String COLUMN_ID = "_id";
+    private static final String COLUMN_TITLE = "bird_img_title";
+    private static final String COLUMN_IMAGE = "img";
 
 
     public MyDatabaseHelper(@Nullable Context context) {
-
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         Log.d("MyDatabaseHelper DB", "After super!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
         this.context = context;
     }
 
@@ -39,14 +37,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
         String query =
                 "CREATE TABLE IF NOT EXISTS " + TABLE_NAME +
-                        " (" + COLUM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        COLUM_TITLE + " TEXT, " +
-                        COLUM_IMAGE + " BLOB);";
+                        " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_TITLE + " TEXT, " +
+                        COLUMN_IMAGE + " BLOB);";
 
         db.execSQL(query);
-
         Log.d("onCreate DB", "CREATE TABLE if not exsists!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
     }
 
     @Override
@@ -59,8 +55,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     void addBird(String title, String image){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(COLUM_TITLE, title);
-        cv.put(COLUM_IMAGE, image);
+        cv.put(COLUMN_TITLE, title);
+        cv.put(COLUMN_IMAGE, image);
 
         long result = db.insert(TABLE_NAME, null, cv);
 
@@ -75,11 +71,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         List<String> birdTitles = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String query = "SELECT " + COLUM_TITLE + " FROM " + TABLE_NAME;
+        String query = "SELECT " + COLUMN_TITLE + " FROM " + TABLE_NAME;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor != null && cursor.moveToFirst()) {
-            int titleIndex = cursor.getColumnIndex(COLUM_TITLE);
+            int titleIndex = cursor.getColumnIndex(COLUMN_TITLE);
 
             do {
                 if (titleIndex != -1) {
@@ -99,6 +95,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return birdTitles;
     }
 
+    Cursor readAllData(){
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        Cursor cursor = null;
+        if (db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
 
 }
