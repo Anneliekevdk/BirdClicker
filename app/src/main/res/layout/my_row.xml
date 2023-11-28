@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     android:columnCount="3"
     android:orientation="horizontal"
-    android:background="#FCB48D">
+    android:background="#9F4515"
+    android:layout_marginTop="50dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_row="0"
-        android:layout_columnWeight="1"
+        android:layout_columnWeight="26.67"
         android:padding="12dp"
         app:cardCornerRadius="10dp"
         android:layout_margin="10dp">
@@ -39,6 +40,7 @@
             android:textSize="16sp" />
 
     </androidx.cardview.widget.CardView>
+
 
 
     <!-- Repeat the above CardView and ImageView blocks for additional rows and ImageViews -->

@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -28,12 +30,13 @@ public class OkkieDex extends AppCompatActivity {
     private Typeface ttf;
     private TextView okkiedexText;
     private TextView vooralleOkkies;
+    private TextView bird_id_txt;
 
     RecyclerView recyclerView;
 
     MyDatabaseHelper myDB;
     ArrayList<String>  bird_id, bird_img_title, img;
-
+    CustomAdapter customAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -57,6 +60,8 @@ public class OkkieDex extends AppCompatActivity {
         okkiedexText.setTypeface(ttf);
         vooralleOkkies = findViewById(R.id.vooralleOkkies);
         vooralleOkkies.setTypeface(ttf);
+//        bird_id_txt = findViewById(R.id.bird_id_txt);
+//        bird_id_txt.setTypeface(ttf); waarom maakt dit alles stuk idk
 
         recyclerView = findViewById(R.id.okkiesRecyclerView);
 
@@ -67,6 +72,10 @@ public class OkkieDex extends AppCompatActivity {
         img = new ArrayList<>();
 
         storeDataInArray();
+
+        customAdapter = new CustomAdapter(OkkieDex.this, bird_id, bird_img_title, img);
+        recyclerView.setAdapter(customAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(OkkieDex.this));
     }
 
     void storeDataInArray(){

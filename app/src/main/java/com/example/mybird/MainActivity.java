@@ -124,6 +124,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String imageOfTheOkkie;
         String titleOfTheOkkieImage;
         switch (points) {
+            case 0:
+                imgBird.setImageResource(R.drawable.bird0);
+                titleOfTheOkkieImage = "" + R.drawable.bird0;
+                imageOfTheOkkie = "bird0";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
+                break;
             case 2:
                 imgBird.setImageResource(R.drawable.bird1);
                 titleOfTheOkkieImage = "" + R.drawable.bird1;
