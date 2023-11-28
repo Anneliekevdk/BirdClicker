@@ -17,7 +17,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "OkkieDex.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 1;
 
     private static final String TABLE_NAME = "birds";
     private static final String COLUM_ID = "_id";

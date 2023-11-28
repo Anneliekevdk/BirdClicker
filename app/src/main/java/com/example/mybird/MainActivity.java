@@ -68,13 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
-
-        int numberInOkkiedex = myDB.getAllBirdTitles().size();
-        if (numberInOkkiedex > 2){
-            points = 10;
-            //birdClick();
-        }
+//        int numberInOkkiedex = myDB.getAllBirdTitles().size();
+//        if (numberInOkkiedex > 2){
+//            points = 10;
+//            //birdClick();
+//        }
         okkiedex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,10 +80,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
         shakeing = findViewById(R.id.shakeSwitch);
         shakeing.setTypeface(ttf);
-
         tvPoints = findViewById(R.id.tvPoints);
         tvPoints.setTypeface(ttf);
         tvPoints.setTextColor(Color.BLACK);
@@ -105,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.parseColor("#FCB48D")); // Orange color
         }
-
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
@@ -121,23 +116,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             });
             v.startAnimation(a);
         }
-
-//        if(v.getId() ==R.id.questionmark){
-//            questionmark.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, OkkieDex.class));
-//            }
-//        });
-//        }else if(v.getId() ==R.id.okkiedexquestionmark){
-//            questionmark.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    startActivity(new Intent(MainActivity.this, OkkieDex.class));
-//                    Log.d("hmmmm", "onClick: okkiedex ");
-//                }
-//            });
-//        }
     }
 
     private void birdClick() {
@@ -184,40 +162,75 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 600:
                 imgBird.setImageResource(R.drawable.buisnessokkie);
+                titleOfTheOkkieImage = "" + R.drawable.buisnessokkie;
+                imageOfTheOkkie = "buisnessokkie";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 700:
                 imgBird.setImageResource(R.drawable.hippy);
+                titleOfTheOkkieImage = "" + R.drawable.hippy;
+                imageOfTheOkkie = "hippy";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 800:
                 imgBird.setImageResource(R.drawable.cowboyokkie);
+                titleOfTheOkkieImage = "" + R.drawable.cowboyokkie;
+                imageOfTheOkkie = "cowboyokkie";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 900:
                 imgBird.setImageResource(R.drawable.kerstokkie);
+                titleOfTheOkkieImage = "" + R.drawable.kerstokkie;
+                imageOfTheOkkie = "kerstokkie";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 1000:
                 imgBird.setImageResource(R.drawable.sinterklaasokkie);
+                titleOfTheOkkieImage = "" + R.drawable.sinterklaasokkie;
+                imageOfTheOkkie = "sinterklaasokkie";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 1100:
                 imgBird.setImageResource(R.drawable.okkiepiettwee);
+                titleOfTheOkkieImage = "" + R.drawable.okkiepiettwee;
+                imageOfTheOkkie = "okkiepiettwee";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 1200:
                 imgBird.setImageResource(R.drawable.summerokkie);
+                titleOfTheOkkieImage = "" + R.drawable.summerokkie;
+                imageOfTheOkkie = "summerokkie";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 1300:
                 imgBird.setImageResource(R.drawable.bird6);
+                titleOfTheOkkieImage = "" + R.drawable.bird6;
+                imageOfTheOkkie = "bird6";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 1400:
                 imgBird.setImageResource(R.drawable.bird7);
+                titleOfTheOkkieImage = "" + R.drawable.bird7;
+                imageOfTheOkkie = "bird7";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 1500:
                 imgBird.setImageResource(R.drawable.bird8);
+                titleOfTheOkkieImage = "" + R.drawable.bird8;
+                imageOfTheOkkie = "bird8";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 1600:
                 imgBird.setImageResource(R.drawable.bird9);
+                titleOfTheOkkieImage = "" + R.drawable.bird9;
+                imageOfTheOkkie = "bird9";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
                 break;
             case 2000:
                 imgBird.setImageResource(R.drawable.bird10);
-
+                titleOfTheOkkieImage = "" + R.drawable.bird10;
+                imageOfTheOkkie = "bird10";
+                addToMyDB(titleOfTheOkkieImage, imageOfTheOkkie);
             default:
                 break;
         }
