@@ -46,6 +46,7 @@ public class OkkieDex extends AppCompatActivity {
         xrossImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("OkkieDex", "ImageView clicked");
                 finish(); // Close the activity when the ImageView is clicked
             }
         });
@@ -77,7 +78,6 @@ public class OkkieDex extends AppCompatActivity {
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(OkkieDex.this));
     }
-
     void storeDataInArray(){
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){

@@ -41,7 +41,101 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_columnWeight="26.67"
+        android:padding="12dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp">
 
+        <ImageView
+            android:id="@+id/img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/questionmark" />
+
+        <TextView
+            android:id="@+id/bird_id_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:paddingBottom="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_columnWeight="26.67"
+        android:padding="12dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/questionmark" />
+
+        <TextView
+            android:id="@+id/bird_id_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:paddingBottom="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_columnWeight="26.67"
+        android:padding="12dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/questionmark" />
+
+        <TextView
+            android:id="@+id/bird_id_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:paddingBottom="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
 
     <!-- Repeat the above CardView and ImageView blocks for additional rows and ImageViews -->
 

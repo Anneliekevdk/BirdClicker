@@ -1,6 +1,7 @@
 package com.example.mybird;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +20,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private List<String> uniqueTitles;
 
 
+
     CustomAdapter(Context context, ArrayList bird_id, ArrayList bird_img_title, ArrayList img) {
         this.context = context;
         this.bird_id = bird_id;
         this.bird_img_title = bird_img_title;
         this.img = img;
         this.uniqueTitles = new ArrayList<>();
+
+
     }
 
     @NonNull
@@ -38,6 +42,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+//        holder.img_iv.setText(String.valueOf(bird_id.get(position)));
+        holder.bird_id_txt.setText(String.valueOf(bird_id.get(position)));
         //maak een legen array die alle titles stored want die zijn toch het zelfde
         //make a arraylist that stores the bird_img_title
         //and then make a array that checks of the bird_img_title is more then one's in the array.
