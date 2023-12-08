@@ -2,4 +2,5 @@
     <string name="app_name">Okkie Clicker</string>
     <string name="okkie_bird_name">Okkie the cute bird</string>
     <string name="clicked">+1</string>
+    <string name="title_activity_main_okkie_dex">MainActivityOkkieDex</string>
 </resources>

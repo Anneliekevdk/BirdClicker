@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         okkiedex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, OkkieDex.class));
+                startActivity(new Intent(MainActivity.this, OkkieDexActivity.class));
             }
         });
 
